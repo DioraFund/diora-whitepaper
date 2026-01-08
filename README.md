@@ -1,7 +1,7 @@
 # ABM Diora Blockchain - Official Whitepaper
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Website](https://img.shields.io/badge/Website-Live-blue.svg)](https://whitepaper.diora.io)
+[![Website](https://img.shields.io/badge/Website-Live-blue.svg)](https://diorafund.github.io/diora-whitepaper)
 [![PDF](https://img.shields.io/badge/PDF-Download-red.svg)](WHITEPAPER.pdf)
 
 The official whitepaper for ABM Diora Blockchain - a comprehensive technical and economic documentation of our next-generation Layer 1 blockchain solution.
@@ -12,7 +12,7 @@ ABM Diora is a next-generation Layer 1 blockchain designed for institutional ado
 
 ## 🌐 Live Website
 
-Visit our official whitepaper website: **[https://whitepaper.diora.io](https://whitepaper.diora.io)**
+Visit our official whitepaper website: **[https://diorafund.github.io/diora-whitepaper](https://diorafund.github.io/diora-whitepaper)**
 
 The website features:
 - **Elegant Design**: Diplomatic and aesthetic presentation
@@ -134,7 +134,7 @@ The website features:
 ### Website Version
 - **Format**: Interactive HTML
 - **Features**: Animations, navigation, responsive design
-- **URL**: https://whitepaper.diora.io
+- **URL**: https://diorafund.github.io/diora-whitepaper
 - **Mobile**: Optimized for mobile devices
 
 ## 🔗 Related Resources
@@ -162,7 +162,7 @@ This whitepaper is licensed under the MIT License - see the [LICENSE](LICENSE) f
 ## 📞 Contact
 
 - **Email**: info@diora.io
-- **Website**: https://diora.io
+- **Website**: https://diorafund.github.io/diora-blockchain
 - **Telegram**: https://t.me/DioraFund
 - **Twitter**: https://twitter.com/DioraCrypto
 
