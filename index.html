@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM Diora Blockchain - Official Whitepaper</title>
+    <meta name="description" content="Comprehensive whitepaper for ABM Diora Blockchain - Next-generation Layer 1 solution for institutional adoption">
+    <meta name="keywords" content="blockchain, cryptocurrency, DIO, ABM Foundation, whitepaper, Layer 1, DeFi">
+    <meta name="author" content="ABM Foundation">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ABM Diora Blockchain - Official Whitepaper">
+    <meta property="og:description" content="Next-generation Layer 1 blockchain with enterprise-grade security and high throughput">
+    <meta property="og:image" content="https://diora.io/images/og-image.jpg">
+    <meta property="og:url" content="https://whitepaper.diora.io">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ABM Diora Blockchain - Official Whitepaper">
+    <meta name="twitter:description" content="Next-generation Layer 1 blockchain with enterprise-grade security">
+    <meta name="twitter:image" content="https://diora.io/images/twitter-card.jpg">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #06b6d4;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 2rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1.125rem; }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #f0f9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-tertiary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Whitepaper Content */
+        .whitepaper-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .whitepaper-content h2 {
+            text-align: left;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .whitepaper-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .whitepaper-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .whitepaper-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .whitepaper-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-tertiary);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.5rem; }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .whitepaper-content {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .cta-buttons {
+                display: none;
+            }
+            
+            .hero {
+                background: white;
+                color: var(--text-primary);
+                padding: 2rem 0;
+            }
+            
+            .whitepaper-content {
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">ABM</div>
+                <span>Diora</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#tokenomics">Tokenomics</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>ABM Diora Blockchain</h1>
+            <p>Next-generation Layer 1 blockchain designed for institutional adoption with enterprise-grade security and high throughput</p>
+            <div class="cta-buttons">
+                <a href="#whitepaper" class="btn btn-primary">
+                    <span>📄</span>
+                    Read Whitepaper
+                </a>
+                <a href="https://github.com/DioraFund/diora-go-blockchain" class="btn btn-secondary">
+                    <span>🔗</span>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Overview Section -->
+        <section id="overview" class="section fade-in">
+            <h2>Blockchain Overview</h2>
+            <div class="whitepaper-content">
+                <h3>Executive Summary</h3>
+                <p>ABM Diora is a next-generation Layer 1 blockchain designed for institutional adoption, featuring enterprise-grade security, high throughput, and comprehensive developer tools. Built by the ABM Foundation, Diora combines the best features of existing blockchains while addressing their limitations through innovative consensus mechanisms and economic models.</p>
+                
+                <h3>Key Innovations</h3>
+                <ul>
+                    <li><strong>Hybrid Proof of Stake (HPoS)</strong>: Combining DPoS with traditional PoS for optimal security and performance</li>
+                    <li><strong>Dynamic Gas Optimization</strong>: Real-time gas price adjustment based on network conditions</li>
+                    <li><strong>Enterprise Security Framework</strong>: Multi-layered security with formal verification</li>
+                    <li><strong>Developer-Centric Architecture</strong>: Full EVM compatibility with enhanced tooling</li>
+                    <li><strong>Sustainable Economics</strong>: Deflationary tokenomics with built-in utility</li>
+                </ul>
+
+                <h3>Technical Specifications</h3>
+                <ul>
+                    <li><strong>Consensus</strong>: Hybrid Proof of Stake (HPoS)</li>
+                    <li><strong>Block Time</strong>: 6 seconds</li>
+                    <li><strong>Throughput</strong>: 1000+ TPS</li>
+                    <li><strong>Validators</strong>: 42 active validators</li>
+                    <li><strong>Virtual Machine</strong>: Ethereum Virtual Machine (EVM) Compatible</li>
+                    <li><strong>Finality</strong>: Instant block finality</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section fade-in">
+            <h2>Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>High Performance</h3>
+                    <p>1000+ transactions per second with 6-second block times and instant finality for enterprise-grade performance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Multi-layered security framework with formal verification, comprehensive audits, and advanced cryptographic primitives.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Developer Friendly</h3>
+                    <p>Full EVM compatibility with comprehensive SDK, CLI tools, and extensive documentation for seamless development.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Sustainable Economics</h3>
+                    <p>Deflationary tokenomics with 50% fee burn, 8.5% staking rewards, and built-in utility for long-term value.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Scalable Architecture</h3>
+                    <p>Sharding-ready architecture with Layer 2 integration support for unlimited scalability and growth.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏛️</div>
+                    <h3>Decentralized Governance</h3>
+                    <p>Community-driven governance with transparent voting, treasury management, and protocol upgrades.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokenomics Section -->
+        <section id="tokenomics" class="section fade-in">
+            <h2>Token Economics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1B</div>
+                    <div class="stat-label">Total Supply</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8.5%</div>
+                    <div class="stat-label">Staking APY</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Fee Burn</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">42</div>
+                    <div class="stat-label">Validators</div>
+                </div>
+            </div>
+            <div class="whitepaper-content">
+                <h3>DIO Token Overview</h3>
+                <p>The DIO token is the native cryptocurrency of the ABM Diora blockchain, designed with a deflationary economic model to ensure long-term value appreciation and sustainable ecosystem growth.</p>
+                
+                <h3>Token Distribution</h3>
+                <ul>
+                    <li><strong>Community & Ecosystem (40%)</strong>: 400,000,000 DIO for grants, partnerships, and community initiatives</li>
+                    <li><strong>Foundation Treasury (25%)</strong>: 250,000,000 DIO for ecosystem development and strategic partnerships</li>
+                    <li><strong>Team & Advisors (20%)</strong>: 200,000,000 DIO with 4-year vesting period</li>
+                    <li><strong>Public Sale (10%)</strong>: 100,000,000 DIO for initial distribution</li>
+                    <li><strong>Reserve (5%)</strong>: 50,000,000 DIO for emergency and future initiatives</li>
+                </ul>
+
+                <h3>Utility Functions</h3>
+                <ul>
+                    <li><strong>Transaction Fees</strong>: Pay for network operations and smart contract execution</li>
+                    <li><strong>Staking</strong>: Secure the network and earn 8.5% APY rewards</li>
+                    <li><strong>Governance</strong>: Participate in protocol decisions and voting</li>
+                    <li><strong>Smart Contracts</strong>: Deploy and execute decentralized applications</li>
+                    <li><strong>DeFi Operations</strong>: Lending, borrowing, and trading in DeFi protocols</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="section fade-in">
+            <h2>Development Roadmap</h2>
+            <div class="whitepaper-content">
+                <h3>Phase 1: Foundation (Q1 2026)</h3>
+                <ul>
+                    <li>✅ Mainnet Launch with 42 validators</li>
+                    <li>✅ Basic blockchain explorer and CLI tools</li>
+                    <li>✅ Comprehensive documentation and security audits</li>
+                    <li>✅ Initial ecosystem partnerships</li>
+                </ul>
+
+                <h3>Phase 2: Ecosystem Growth (Q2 2026)</h3>
+                <ul>
+                    <li>🔄 DeFi suite development (DEX, lending, yield farming)</li>
+                    <li>🔄 NFT platform and marketplace</li>
+                    <li>🔄 Cross-chain bridges with major networks</li>
+                    <li>🔄 Mobile wallet application</li>
+                    <li>🔄 Developer grant program launch</li>
+                </ul>
+
+                <h3>Phase 3: Enterprise Adoption (Q3 2026)</h3>
+                <ul>
+                    <li>📋 Enterprise SDK and API solutions</li>
+                    <li>📋 Compliance and regulatory tools</li>
+                    <li>📋 Privacy features with zero-knowledge proofs</li>
+                    <li>📋 Institutional custody solutions</li>
+                    <li>📋 KYC/AML integration for enterprise clients</li>
+                </ul>
+
+                <h3>Phase 4: Scalability (Q4 2026)</h3>
+                <ul>
+                    <li>📋 Sharding implementation for horizontal scaling</li>
+                    <li>📋 Layer 2 solutions integration</li>
+                    <li>📋 Advanced oracle network</li>
+                    <li>📋 Quantum-resistant cryptography</li>
+                    <li>📋 Cross-chain interoperability protocol</li>
+                </ul>
+
+                <h3>Phase 5: Full Decentralization (2027)</h3>
+                <ul>
+                    <li>📋 Complete DAO implementation</li>
+                    <li>📋 Community governance transition</li>
+                    <li>📋 Foundation decentralization</li>
+                    <li>📋 Global ecosystem expansion</li>
+                    <li>📋 Self-sustaining economic model</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Whitepaper Download Section -->
+        <section id="whitepaper" class="section fade-in">
+            <h2>Download Complete Whitepaper</h2>
+            <div class="whitepaper-content" style="text-align: center;">
+                <h3>Comprehensive Technical Documentation</h3>
+                <p>Download the complete ABM Diora Blockchain whitepaper for detailed technical specifications, economic models, security frameworks, and implementation details.</p>
+                
+                <div style="margin: 2rem 0;">
+                    <a href="WHITEPAPER.pdf" class="btn btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;">
+                        <span>📄</span>
+                        Download PDF Whitepaper
+                    </a>
+                </div>
+                
+                <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                    File size: ~2.5 MB | Format: PDF | Language: English
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About ABM Foundation</h4>
+                <p>ABM Foundation is dedicated to building the next generation of blockchain infrastructure for institutional adoption and mass market penetration.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://github.com/DioraFund/diora-go-blockchain">GitHub Repository</a></li>
+                    <li><a href="https://diorafund.github.io/diora-blockchain/explorer/">Blockchain Explorer</a></li>
+                    <li><a href="https://github.com/DioraFund/diora-go-blockchain/blob/main/docs/getting-started.md">Developer Documentation</a></li>
+                    <li><a href="https://github.com/DioraFund/diora-go-blockchain/blob/main/CONTRIBUTING.md">Contributing Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="https://t.me/DioraFund">Telegram</a></li>
+                    <li><a href="https://twitter.com/DioraCrypto">Twitter</a></li>
+                    <li><a href="https://github.com/DioraFund">GitHub</a></li>
+                    <li><a href="mailto:info@diora.io">Email</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#license">License</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ABM Foundation. All rights reserved. | Built with ❤️ for the future of decentralized finance</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+                This whitepaper is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(6, 182, 212, 0.95))';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
